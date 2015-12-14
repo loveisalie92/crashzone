@@ -1,0 +1,160 @@
+{
+	
+}
+
+.logo {
+	padding:10px 0px 0px 10px;
+	float:left;
+}
+
+.top-right-nav {
+	text-align: right;
+	padding-right: 20px; 
+}
+.top-right-nav li {
+	display: inline;
+}
+.top-right-nav a {
+	color: #333;
+}
+.search-bar input[type=text] {
+	
+}
+
+
+.action-bar-item {
+
+	float:left;
+	padding: 10px;
+	background: #FFF87F;
+	margin-right: 3px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	cursor: pointer;
+}
+.active {
+	background: #FFF200;
+}
+.quote-wrapper{
+	padding: 0px 10px;
+	background: #FFF200;
+}
+.quote-list {
+	background: #fff;
+	padding-left: 15px;
+}
+.quote-list table tbody tr {
+	cursor: pointer;
+}
+.detail-content {
+	padding-top: 15px; 
+	margin-bottom: 20px; 
+}
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #FFF87F;
+ }
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: none;
+}
+.detail-content{
+	max-width: 800px;
+}
+.detail-content table td {
+	width: 50%; 
+}
+.sub-object, .object{
+	padding: 0px;
+	
+	height: 100%;
+	
+}
+.sub-object ul, .object ul {
+	border-right: 1px solid black;
+}
+.quote-content ul li {
+	cursor: pointer;
+	list-style: none;
+	padding: 2px;
+}
+.quote-content {
+	margin-bottom: 20px; 
+}
+.quote-content ul {
+	padding: 0px;
+}
+.active-object {
+	background: #FFF87F;
+}
+
+.active-sub-object {
+	background: #FFF87F;
+}
+.quote-detail {
+	position: relative;
+	padding: 0px;
+}
+.button-group {
+	position: absolute;
+	top:-30px;
+}
+.quote-detail thead{
+background: #FFF200;
+}
+.quote-detail table tbody tr {
+	cursor: pointer;
+}
+.blank-box {
+	min-height: 30px;
+	background: #FFF200;
+	padding:5px;
+}
+
+.func-button {
+	margin-top: 3px; 
+	padding: 3px 9px;
+	background: #414042;
+	border-radius: 20px;
+	border: none;
+}
+.func-button:hover {
+	background: #414042;
+}
+.active-job {
+	background: #FFF87F;
+}
+.hours-input {
+	width: 50px;
+}
+.money-input {
+	width: 50px;
+}
+.head-info {
+	text-align: center;
+}
+.estimate-no {
+	color: red;
+}
+.owner-info table {
+	font-size: 13px;
+	 
+}
+.owner-info th {
+	padding-right: 100px;
+	font-style: italic;
+	font-weight: unset;
+}
+.invoice table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px 0px;
+	font-size:13px
+}
+.invoice table th {
+	text-align: left;
+}
+.invoice table tr:nth-of-type(even){
+	background: #f0f0f0;
+}
+
