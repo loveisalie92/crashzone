@@ -11,7 +11,11 @@ use PDF;
 
 class CustomerController extends Controller
 {
-    const PER_PAGE = 15;
+    /**
+     * Number of display results;
+     */
+    const PER_PAGE = 10;
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +33,9 @@ class CustomerController extends Controller
             'colour',
         ];
 
-        $customerList = Customer::select($column)->simplePaginate(self::PER_PAGE);
+        $customerList = Customer::select($column)
+            ->orderBy('id', 'DESC')
+            ->simplePaginate(self::PER_PAGE);
 
         return view('crashzone.index', compact('customerList'));
     }
@@ -63,6 +69,11 @@ class CustomerController extends Controller
         };
     }
 
+    /**
+     * View the report of a Customer
+     * @param  [int] $id [Customer id]
+     * @return [view]
+     */
     public function viewReport($id)
     {
         $customer = Customer::findOrFail($id);
@@ -87,18 +98,6 @@ class CustomerController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -110,18 +109,6 @@ class CustomerController extends Controller
     {
         $customer = Customer::findOrFail($id);
         $customer->update($request->all());
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     /**
@@ -145,7 +132,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Search function
+     * Search Customer function
      */
     public function search(Request $request)
     {

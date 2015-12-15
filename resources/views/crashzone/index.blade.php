@@ -77,20 +77,24 @@
                 // alert(isFinished)
                 if (window.isFinished) {
                     var keywords = _this.val();
-                    var url = "{{ route('search') }}";
-                    $.ajax({
-                        url: url,
-                        method: 'post',
-                        data: {
-                            keywords: keywords,
-                            _token: "{{ csrf_token() }}"
-                        },
-                        success: function(response) {
-                            $('.quote-list table tbody').html("");
-                            $('.quote-list table tbody').append(response);
-                        }
+                        if (keywords != "") {
+                            var url = "{{ route('search') }}";
+                            $.ajax({
+                                url: url,
+                                method: 'post',
+                                data: {
+                                    keywords: keywords,
+                                    _token: "{{ csrf_token() }}"
+                                },
+                                success: function(response) {
+                                    $('.quote-list table tbody').html("");
+                                    $('.quote-list table tbody').append(response);
+                                }
 
-                    });
+                            });
+                        } else {
+                             location.reload();
+                        }
                     window.isFinished = false;
                 }
             }, 1000);

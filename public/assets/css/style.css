@@ -32,6 +32,15 @@
 	border-top-right-radius: 7px;
 	cursor: pointer;
 }
+.header {
+	position: relative;
+}
+
+.loading {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
 .active {
 	background: #FFF200;
 }

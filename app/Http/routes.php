@@ -11,25 +11,9 @@
 |
 */
 
-/**
- * Route for testing the user interface
- */
-
-
-Route::get('/details', function () {
-	return view('crashzone.details');
-});
-
-Route::get('/quote', function () {
-	return view('layouts.quote');
-});
-
-Route::get('report', function () {
-	return view('layouts.report');
-});
 
 /**
- * Route for details page
+ * Route for customer page
  */
 
 Route::get('/', [

@@ -67,11 +67,25 @@ var fixQuoteHeight = function(){
 		});
 	}
 
+    function showLoadingImage() {
+        $(document).ajaxStart(function () {
+            $('.loading').show();
+        });
+
+        $(document).ajaxStop(function () {
+            window.setTimeout(function () {
+                $('.loading').hide();
+            }, 300);
+
+        });
+    }
+
 	$(document).ready(function (){
 		onclickMenu();
 		onclickObjectItem();
 		onclickSubObjectItem();
 		fixQuoteHeight();
 		onclickJobItem();
+        showLoadingImage();
 		//onclickLinks();
 	});

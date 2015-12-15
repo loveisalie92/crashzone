@@ -28,5 +28,8 @@
             </div>
         </div>
 
+        <div class="loading" style="display:none">
+            <img src="{{ asset('assets/img/loading.gif') }}" alt="" width="80px" height="60px">
+        </div>
     </div>
 </header>
