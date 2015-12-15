@@ -176,6 +176,7 @@
     function checkIfModifiCustomerInfo() {
         $('input').on('change', function () {
             window.isChanged = true;
+            autoUpdateCustomerInfo();
             // alert(window.isChanged);
         });
     }
@@ -204,17 +205,31 @@
         };
         return data;
     }
+
+    function autoUpdateCustomerInfo() {
+        if(window.isChanged) {
+            window.setTimeout(function () {
+                if(window.isChanged) {
+                    updateCustomerInfo();
+                }
+            }, 4500);
+        }
+    }
+    function updateCustomerInfo() {
+        if (window.isChanged) {
+            data = getValuesForSubmit();
+            $.ajax({
+                url:'{{ route("update", ["id" => $customer->id]) }}',
+                data:data,
+                method :'post'
+            });
+            window.isChanged = false;
+        }
+    }
+
     function updateCustomerOnclick() {
         $('a').on('click', function () {
-            if (window.isChanged) {
-                data = getValuesForSubmit();
-                $.ajax({
-                    url:'{{ route("update", ["id" => $customer->id]) }}',
-                    data:data,
-                    method :'post'
-                });
-                window.isChanged = false;
-            }
+            updateCustomerInfo();
         });
 
     }

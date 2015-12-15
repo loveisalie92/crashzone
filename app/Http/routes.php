@@ -26,11 +26,6 @@ Route::get('new', [
     'uses' => 'CustomerController@store'
 ]);
 
-Route::post('new', [
-    'as' => 'new',
-    'uses' => 'CustomerController@store'
-]);
-
 Route::get('report/{id}', [
 	'as' => 'report',
 	'uses' => 'CustomerController@viewReport'
