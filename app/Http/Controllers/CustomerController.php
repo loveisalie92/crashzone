@@ -8,6 +8,7 @@ use Session;
 use DB;
 use Mail;
 use PDF;
+use App\Http\Requests\Crashzone\ImageUploadRequest;
 
 class CustomerController extends Controller
 {
@@ -157,5 +158,31 @@ class CustomerController extends Controller
 
         return view('crashzone.partials.search_result', compact('customers'));
 
+    }
+
+    /**
+     * Upload function for drag and drop tesing
+     */
+    public function imageUpload(ImageUploadRequest $request)
+    {
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $fileName = microtime().$file->getClientOriginalName();
+
+            $ds = DIRECTORY_SEPARATOR;
+
+            $success = [
+                'status' => 'success',
+                'filename' => asset('upload').$ds.$fileName
+            ];
+
+            $failed = [
+                'status' => 'failed',
+                'filename' => $file->getClientOriginalName()
+            ];
+
+            return $file->move('upload', $fileName) ? response()->json($success) : response()->json($failed);
+
+        }
     }
 }

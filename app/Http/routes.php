@@ -46,11 +46,16 @@ Route::post('email/{id}', [
 	'uses' => 'CustomerController@email'
 ]);
 
-Route::get('redirect', function () {
-	return view('crashzone.message');
-});
-
 Route::post('/search', [
 	'as' => 'search',
 	'uses' => 'CustomerController@search'
+]);
+
+Route::get('/drag-drop', function () {
+    return view('drag_and_drop.example');
+});
+
+Route::post('dad', [
+    'as' => 'dad',
+    'uses' => 'CustomerController@imageUpload'
 ]);

@@ -3,7 +3,7 @@
 @section('job-bar')
 <div class="row">
     <div class="move-bar col-md-9 col-sm-8">
-        <a onclick="window.history.go(-1);" class="func-button btn btn-warning">Back</a>
+        <a href="{{ URL::previous() }}" class="func-button btn btn-warning">Back</a>
 
         <select class="id-select" name="">
             @foreach($customerIdList as $id)

@@ -3,7 +3,7 @@
 @section('job-bar')
 <div class="row">
     <div class="move-bar col-md-9 col-sm-8">
-        <a onclick="window.history.back();" class="func-button btn btn-warning">Back</a>
+        <a href="{{ URL::previous() }}" class="func-button btn btn-warning">Back</a>
 
     </div>
     <div class="action-bar col-md-3 col-sm-4">
@@ -76,7 +76,17 @@
                     </tr>
 
                     <tr>
-                        <th>colour</th>
+                        <th>Series:</th>
+                        <td>{{ $customer->series }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Badge:</th>
+                        <td>{{ $customer->badge }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Colour:</th>
                         <td>{{ $customer->colour }}</td>
                     </tr>
 

@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Former\FormerServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -197,6 +198,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Former'    => Former\Facades\Former::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
