@@ -13,6 +13,8 @@ class Customer extends Model
      */
     protected $table = 'customers';
 
+    protected $dates = ['created_at', 'updated_at'];
+
     /**
      * The attributes that are mass assignable.
      *
