@@ -167,7 +167,7 @@ class CustomerController extends Controller
     {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $fileName = microtime().$file->getClientOriginalName();
+            $fileName = time().$file->getClientOriginalName();
 
             $ds = DIRECTORY_SEPARATOR;
 

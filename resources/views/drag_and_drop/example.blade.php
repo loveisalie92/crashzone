@@ -46,7 +46,13 @@
                 $result = '<img src="'+ response['filename'] +'" alt="" width="100px" height="100px">';
                 $('#response').append($result);
             }
+        },
+        error: function (file, response) {
+            $.each(response, function (key, value) {
+                alert(value);
+            });
         }
+
     };
     </script>
 

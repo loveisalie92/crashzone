@@ -50,13 +50,12 @@
 }
 .quote-list {
 	background: #fff;
-	padding-left: 15px;
 }
 .quote-list table tbody tr {
 	cursor: pointer;
 }
 .detail-content {
-	padding-top: 15px; 
+	padding: 15px; 
 	margin-bottom: 20px; 
 }
 .table-striped>tbody>tr:nth-child(odd)>td, 
