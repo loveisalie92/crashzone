@@ -17,7 +17,7 @@
             <table>
                 <tr>
                     <th>Quote Date:</th>
-                    <td>{{ $customer->created_at }}</td>
+                    <td>{{ $customer->quote_date }}</td>
                 </tr>
 
                 <tr>

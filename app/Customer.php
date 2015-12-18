@@ -25,4 +25,9 @@ class Customer extends Model
         'rego', 'dom', 'make', 'model', 'series', 'badge', 'colour',
         'rr'
     ];
+
+    public function getQuoteDateAttribute()
+    {
+        return $this->created_at->format(config('web.date_format'));
+    }
 }

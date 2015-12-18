@@ -49,7 +49,7 @@
                         @foreach($customerList as $customer)
                             <tr data-id="{{ $customer->id }}">
                                 <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->created_at->format('d/m/Y') }}</td>
+                                <td>{{ $customer->quote_date }}</td>
                                 <td>{{ $customer->owner }}</td>
                                 <td>{{ $customer->rego }}</td>
                                 <td>{{ $customer->make }}</td>
