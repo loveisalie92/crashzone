@@ -77,7 +77,20 @@ class CustomerController extends Controller
      */
     public function viewReport($id)
     {
-        $customer = Customer::findOrFail($id);
+        $column = [
+            'id',
+            'created_at',
+            'owner',
+            'address',
+            'email',
+            'dom',
+            'rego',
+            'model',
+            'series',
+            'badge',
+            'colour'
+        ];
+        $customer = Customer::findOrFail($id, $column);
 
         return view('crashzone.report', compact('customer'));
     }
@@ -117,8 +130,23 @@ class CustomerController extends Controller
      */
     public function email(Request $request, $id)
     {
+        $column = [
+            'id',
+            'created_at',
+            'owner',
+            'address',
+            'email',
+            'dom',
+            'rego',
+            'model',
+            'series',
+            'badge',
+            'colour'
+        ];
+
         $email = $request->input('email');
-        $customer = Customer::findOrFail($id);
+
+        $customer = Customer::findOrFail($id, $column);
         $pdfPath = $_SERVER['DOCUMENT_ROOT'].'/pdf/file.pdf';
         $pdf = PDF::loadView('emails.report', ['customer' => $customer]);
         $pdf->save($pdfPath);
